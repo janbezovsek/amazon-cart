@@ -1,0 +1,13 @@
+.App-header {
+    background-color: #0A2546;
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home {
+    color: grey;
+    display: flex;
+    justify-content: left;
+    margin-left: 20px;
+  }
