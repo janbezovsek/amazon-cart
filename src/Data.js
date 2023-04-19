@@ -34,6 +34,7 @@ const items = [
         price: "39.99",
         quantity: 3
      },
+     
 ]
 
 export default items;
