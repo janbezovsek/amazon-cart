@@ -34,6 +34,27 @@ const items = [
         price: "39.99",
         quantity: 3
      },
+     {
+        title: "Wusthof Classic IKON 15-Piece Knife Block Set",
+        stock: "In stock on April 25, 2023",
+        image: "item-6.jpg",
+        price: "149.99",
+        quantity: 6
+   },
+   {
+        title: "Wusthof Performer 8 Chef's Knife",
+        stock: "In stock on March 25, 2023",
+        image: "item-7.jpg",
+        price: "349.99",
+        quantity: 5
+   },
+   {
+        title: "SmartWatch Fitness for Android iPhone",
+        stock: "In stock on April 10, 2023",
+        image: "item-8.jpg",
+        price: "39.99",
+        quantity: 3
+   },
      
 ]
 

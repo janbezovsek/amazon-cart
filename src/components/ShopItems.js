@@ -4,6 +4,7 @@ import ShopItem from './ShopItem'
 
 function ShopItems({ items, setCartItems }) {
 
+    const num1 = 3;
    /*
 
     const deleteItem = (indexToDelete) => {
@@ -17,6 +18,7 @@ function ShopItems({ items, setCartItems }) {
     const addToCart = () => {
         
     }
+
 
     return (
         <div className="App-main">

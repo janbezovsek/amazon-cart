@@ -30,14 +30,20 @@ function CartItems({ items, setCartItems }) {
             <hr />
                 <div className="CartItems-items">
                     {items.map((item, index) => 
-                        <CartItem 
+                       {
+                        if(index < 3) { //Displaying maximum of five items in the cart
+                        return <CartItem 
                             index={index}
                             item={item}
                             key={index}
                             changeItemQuantity={changeItemQuantity}
                             deleteItem={deleteItem}
                         />
+                        }
+                        return null
+                       }
                     )}
+                    
                 </div>
         </div>
         </div>

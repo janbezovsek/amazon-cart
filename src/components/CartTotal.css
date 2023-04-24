@@ -3,9 +3,9 @@
     background-color: white;
     padding: 20px;
     text-align: left;
-    margin-left: 1150px;
-    margin-top: -1160px;
-    margin-right: 20px;
+    top: 240px;
+    right: 20px;
+    position: fixed;
   }
 
   .CartTotal button {
