@@ -1,6 +1,6 @@
 import React from 'react'
-import CartItems from './CartItems';
-import CartTotal from './CartTotal';
+import ShopItems from './ShopItems'
+
 import './Shop.css'
 
 const Shop = ({ items, setCartItems}) => {
@@ -10,8 +10,10 @@ const Shop = ({ items, setCartItems}) => {
       <div className="shop-header">
         <h1>Shop</h1>
       </div>
-      <CartItems items={items} setCartItems={setCartItems} />
-      <CartTotal items={items}/>
+      {/*<CartItems items={items} setCartItems={setCartItems} />
+      <CartTotal items={items}/>*/}
+      <ShopItems items = {items} setCartItems={setCartItems} />
+     
   </div>
   )
 }
