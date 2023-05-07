@@ -24,6 +24,7 @@ function CartItems({ items, setCartItems }) {
             return index !== indexToDelete;
         })
         setCartItems(newItems);
+        console.log(newItems)
     }
 
     const addItems = () => {

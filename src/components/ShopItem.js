@@ -2,7 +2,7 @@ import React from 'react'
 import './Shop.css'
 
 
-const ShopItem  =  ({index, item}) => {
+const ShopItem  =  ({index, item, addToCart}) => {
   return (
     <div className="CartItem">
         <div className="CartItem-image">
@@ -20,7 +20,9 @@ const ShopItem  =  ({index, item}) => {
                     
                 </div>
                 <div className="item-actions-divider">|</div>
-                
+                <div className="item-add" onClick={addToCart.bind(this, index)}>
+                    Add to cart
+                </div>
             </div>
         </div>
         <div className="CartItem-price">

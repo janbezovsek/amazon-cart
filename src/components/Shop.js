@@ -3,7 +3,7 @@ import ShopItems from './ShopItems'
 
 import './Shop.css'
 
-const Shop = ({ items, setCartItems}) => {
+const Shop = ({ items, setCartItems, items2, setShopItems}) => {
 
   return (
     <div>
@@ -12,7 +12,7 @@ const Shop = ({ items, setCartItems}) => {
       </div>
       {/*<CartItems items={items} setCartItems={setCartItems} />
       <CartTotal items={items}/>*/}
-      <ShopItems items = {items} setCartItems={setCartItems} />
+      <ShopItems items2 = {items2} setShopItems = {setShopItems} items = {items} setCartItems={setCartItems} />
      
   </div>
   )

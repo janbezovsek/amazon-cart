@@ -70,6 +70,15 @@
     text-decoration: underline;
 }
 
+.item-add {
+    color: #007185;
+    cursor: pointer;
+}
+
+.item-add:hover {
+    text-decoration: underline;
+}
+
 .CartItem-price{
     font-size: 18px;
     font-weight: 700;

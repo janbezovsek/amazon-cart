@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{ useContext } from 'react'
+import { UserContext } from "./userContext"
 import ShopItem from './ShopItem'
 
 
-function ShopItems({ items, setCartItems }) {
+function ShopItems({ items, setCartItems, items2, setShopItems }) {
+
+    const {itemsState, setItemsState} = useContext(UserContext);
 
     const num1 = 3;
    /*
@@ -15,8 +18,15 @@ function ShopItems({ items, setCartItems }) {
         setCartItems(newItems);
     }
     */
-    const addToCart = () => {
+    const addToCart = (itemToBeAdded, index) => {
+        let newItems2 = [...items];//deconstructing
+        console.log(newItems2)
         
+        newItems2 = items.filter((value,index) =>{
+            return index === itemToBeAdded
+        });
+        setShopItems(newItems2)
+        console.log(newItems2);
     }
 
 
@@ -31,7 +41,7 @@ function ShopItems({ items, setCartItems }) {
                             index={index}
                             item={item}
                             key={index}
-                            
+                            addToCart={addToCart}
                         />
                     )}
                 </div>
