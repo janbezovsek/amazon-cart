@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{ useContext } from 'react'
+import { UserContext } from "./userContext"
 import './CartItems.css'
 import CartItem from './CartItem'
 
 function CartItems({ items, setCartItems }) {
+
+    const {itemsState, setItemsState} = useContext(UserContext);
 
     const changeItemQuantity = (e, index) => {
         //when we select a quantity on item, we pass it in here
@@ -23,6 +26,12 @@ function CartItems({ items, setCartItems }) {
         setCartItems(newItems);
     }
 
+    const addItems = () => {
+        //function to add item to the list
+        
+    }
+
+//potrebno bo narediti nov aray kamor bom shranjeval izdelke, ki sem jih izbral. Iz tega araya jih bom tudi prikazoval na zaslonu.
     return (
         <div className="App-main">
         <div className="CartItems">
@@ -31,7 +40,8 @@ function CartItems({ items, setCartItems }) {
                 <div className="CartItems-items">
                     {items.map((item, index) => 
                        {
-                        if(index < 3) { //Displaying maximum of five items in the cart
+                        if(index < 3 && itemsState.value === false
+                            ) { //Displaying determined items in the cart
                         return <CartItem 
                             index={index}
                             item={item}
