@@ -3,11 +3,26 @@ import { UserContext } from "./userContext"
 import ShopItem from './ShopItem'
 
 
+
+
+
+
 function ShopItems({ items, setCartItems, items2, setShopItems }) {
 
     const {itemsState, setItemsState} = useContext(UserContext);
 
-    const num1 = 3;
+    const changeItemQuantity = (e, index) => {
+        //when we select a quantity on item, we pass it in here
+        //Pass in the index of the quantity
+        //using the index we need to change the quantity to the selected one from select option
+        //update the items state
+        //Do not update the state without setter function
+        const newItems = [...items];//deconstructing
+        items[index].quantity= e.target.value;
+        setCartItems(newItems);
+    }
+
+    
    /*
 
     const deleteItem = (indexToDelete) => {
@@ -18,14 +33,19 @@ function ShopItems({ items, setCartItems, items2, setShopItems }) {
         setCartItems(newItems);
     }
     */
+
+    //we use this function to select an item and add it from shopping cart page to home page
     const addToCart = (itemToBeAdded, index) => {
         let newItems2 = [...items];//deconstructing
-        console.log(newItems2)
+        
         
         newItems2 = items.filter((value,index) =>{
             return index === itemToBeAdded
         });
-        setShopItems(newItems2)
+        
+    //we push the selected item to the existing array of items
+        setShopItems(current => [...current, ...newItems2])
+    
         console.log(newItems2);
     }
 
@@ -42,6 +62,7 @@ function ShopItems({ items, setCartItems, items2, setShopItems }) {
                             item={item}
                             key={index}
                             addToCart={addToCart}
+                            changeItemQuantity={changeItemQuantity}
                         />
                     )}
                 </div>

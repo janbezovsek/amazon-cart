@@ -1,7 +1,9 @@
 import React from 'react'
 import ShopItems from './ShopItems'
-
 import './Shop.css'
+
+
+
 
 const Shop = ({ items, setCartItems, items2, setShopItems}) => {
 

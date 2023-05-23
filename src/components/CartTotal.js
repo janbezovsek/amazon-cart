@@ -2,7 +2,7 @@ import React from 'react'
 import './CartTotal.css'
 import NumberFormat from 'react-number-format';
 
-function CartTotal({ items }) {
+function CartTotal({ items2 }) {
 
   const getTotalPrice = () => {
   //init total price to 0
@@ -11,7 +11,7 @@ function CartTotal({ items }) {
   // return the total price
 
   let total = 0;
-  items.forEach((item)=>{
+  items2.forEach((item)=>{
     total+= (item.price * item.quantity);
   })
   return total;
@@ -24,7 +24,7 @@ function CartTotal({ items }) {
     
     <div className="CartTotal">
         <h3>
-            Subtotal({items.length} items) :
+            Subtotal({items2.length} items) :
             <span className="CartTotal-price">
               <NumberFormat value={getTotalPrice()} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} />
                 
