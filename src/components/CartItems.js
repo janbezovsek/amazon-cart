@@ -24,14 +24,20 @@ function CartItems({ items, setCartItems, items2, setShopItems }) {
         setCartItems(newItems);
     }
 
-    const deleteItem = (indexToDelete) => {
+    const deleteItem = (indexToDelete) => { 
         //filter out the items where the item index does not equal to the selected item
-        const newItems = items.filter((value, index)=>{
+        //we are deleting items from the shopItems array
+        const newItems = items2.filter((value, index)=>{
             return index !== indexToDelete;
         })
-        setCartItems(newItems);
-        console.log(newItems)
+        
+        setShopItems(newItems);
+        
+    
     }
+    
+    
+
 
     
 
@@ -43,7 +49,7 @@ function CartItems({ items, setCartItems, items2, setShopItems }) {
                 <div className="CartItems-items">
                     {items2.map((item, index) => 
                        {
-                        if(index < 3 && itemsState.value === false
+                        if( itemsState.value === false
                             ) { //Displaying determined items in the cart
                                 
                         return <CartItem 
@@ -53,6 +59,7 @@ function CartItems({ items, setCartItems, items2, setShopItems }) {
                             changeItemQuantity={changeItemQuantity}
                             deleteItem={deleteItem}
                         />
+                        
                         }
                         return null
                        }
