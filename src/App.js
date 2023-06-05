@@ -4,8 +4,12 @@ import Shop from './components/Shop'
 import NavBar from './components/NavBar';
 import AppHomePage from './components/AppHomePage';
 import data from './Data';
-import { BrowserRouter as Router, Route, Routes, Link, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, BrowserRouter, useNavigate } from 'react-router-dom';
 import { UserContext } from './components/userContext'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
 
 
 
@@ -20,7 +24,18 @@ function App() {
 
   const [ shopItems, setShopItems ] = useState([])
 
+  const [ query, setQuery ] = useState("") //for searchbar
+
+  const [ list, setList ] = useState([]) //for searchbar
+
   
+
+  const navigate = useNavigate()
+
+  const navigateToShop = () => {
+    //navigate to shopItems page
+    navigate('/shop')
+  }
 
 
 
@@ -29,7 +44,7 @@ function App() {
   <>
   
     <UserContext.Provider value={{itemsState, setItemsState}}>
-      <NavBar />
+      <NavBar query={query} setQuery={setQuery} list={list} setList={setList} navigateToShop={navigateToShop}/>
       
       <Routes>
         <Route path="/" element={<AppHomePage items2={shopItems} setShopItems = {setShopItems} items={cartItems} setCartItems={setCartItems} />} />
@@ -42,3 +57,5 @@ function App() {
 }
 
 export default App;
+
+library.add(fab, fas, far)
