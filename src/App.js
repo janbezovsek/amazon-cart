@@ -38,13 +38,19 @@ function App() {
   }
 
 
+  const onClear = () => {
+    //function for clearing a searchbar input after clicking on the selected item
+    setQuery("");
+  };
+
+
 
 
   return (
   <>
   
     <UserContext.Provider value={{itemsState, setItemsState}}>
-      <NavBar query={query} setQuery={setQuery} list={list} setList={setList} navigateToShop={navigateToShop}/>
+      <NavBar query={query} setQuery={setQuery} list={list} setList={setList} navigateToShop={navigateToShop} onClear={onClear}/>
       
       <Routes>
         <Route path="/" element={<AppHomePage items2={shopItems} setShopItems = {setShopItems} items={cartItems} setCartItems={setCartItems} />} />
