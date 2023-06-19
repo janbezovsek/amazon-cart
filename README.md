@@ -16,6 +16,15 @@ be redirected to shop page.
 
 - clone the project
 - run command 'npm run' in your terminal
+- install these dependencies:
+  npm i --save @fortawesome/fontawesome-svg-core
+  npm install --save @fortawesome/free-solid-svg-icons
+  npm install --save @fortawesome/react-fontawesome
+  npm i --save @fortawesome/free-brands-svg-icons
+  npm i --save @fortawesome/free-regular-svg-icons
+  npm install react-number-format
+  npm i react-router-dom
+
 
 ## How to tweak this project for your own uses
 
