@@ -25,6 +25,9 @@ be redirected to shop page.
   npm install react-number-format
   npm i react-router-dom
 
+UPDATES: in CartTotal compononet there might be an issue with NumberFormat dependencie due to 
+recent updates. instead of import NumberFormat from 'react-number-format' try import { NumericFormat } from 'react-number-format'
+
 
 ## How to tweak this project for your own uses
 
